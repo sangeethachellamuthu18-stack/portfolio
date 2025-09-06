@@ -1,0 +1,98 @@
+/* ===== General Styles ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f172a; /* Dark background */
+    color: #e2e8f0; /* Light text */
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ===== Header ===== */
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #0ea5e9;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #0ea5e9;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #ffffff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0ea5e9;
+}
+
+/* ===== About Section ===== */
+#about {
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0; /* Hidden initially for animation */
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+}
+
+#about.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+#about p {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* ===== Button ===== */
+.section-btn {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn {
+    padding: 12px 25px;
+    background-color: #0ea5e9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #0284c7;
+    transform: translateY(-2px);
+}

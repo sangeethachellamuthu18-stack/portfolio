@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="{% static 'images/profile.jpg' %}" alt="Profile Photo" class="profile-pic">
+        <h1>Sangeetha Priya</h1>
+        <p>🚀 Python Full Stack Developer</p>
+        <nav>
+            <a href="{% url 'resume' %}">About</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a motivated Python Full Stack Developer with skills in Django, HTML, CSS, and JavaScript.
+            Passionate about building scalable applications and modern websites.
+        </p>
+    </section>
+
+    <!-- Button at the bottom -->
+    <section class="section-btn">
+        {% load static %}
+      <a href="{% static 'resume/pdf/SANGEETHAPRIYA_resume.pdf' %}" download>
+      Download Resume
+      </a>
+
+
+
+    </section>
+
+    <!-- Scroll animation script -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const about = document.getElementById('about');
+            const rect = about.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight - 100) {
+                about.classList.add('visible');
+            } else {
+                about.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
