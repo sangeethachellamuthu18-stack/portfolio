@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/resume.css' %}">
+</head>
+<body>
+<header>
+    <h1>SANGEETHA PRIYA</h1>
+    <p>Python Full Stack Developer</p>
+  </header>
+
+  <!-- About -->
+  <section id="aboutme">
+    <h2>About Me</h2>
+    <p>
+      I am <b>Sangeetha Priya</b>, a passionate <b>Python Full Stack Developer</b> with strong knowledge of
+      Python, Django, HTML, CSS, JavaScript, SQL.
+      I enjoy building user-friendly web applications and solving real-world problems through innovative coding solutions.
+      I am eager to contribute my skills in a collaborative team environment and grow as a professional developer.
+    </p>
+    <p>Email: <b>sangeethachellamuthu18@gmail.com</b></p>
+    <p>Phone: 7397105845, 9360485845</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Social Media Web App</h3>
+        <p>Django, MySQL, HTML, CSS, JavaScript</p>
+        <p>Features: Login/Register, Posts, Likes, Comments, Messaging</p>
+        <a href="https://github.com/sangeethachellamuthu18-stack" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>E-commerce Platform</h3>
+        <p>Django, Python, MySQL</p>
+        <p>Admin: Product & Order Management | Users: Wishlist, Cart, Orders</p>
+        <a href="https://github.com/sangeethachellamuthu18-stack" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Personal Portfolio</h3>
+        <p>Built with HTML & CSS</p>
+        <p>Showcases skills, resume, and project details in a clean design</p>
+        <a href="https://github.com/sangeethachellamuthu18-stack" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Social Media Scheduler Tool</h3>
+        <p>Python, SQL, Django, HTML, CSS</p>
+        <p>Features: Post the media at the schedule time and reply to the comment using this tool</p>
+        <a href="https://github.com/sangeethachellamuthu18-stack" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Timeline -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
+        <div class="timeline-item-content">
+          <h3>B.Sc. Computer Science</h3>
+          <p>PSGR Krishnammal College for Women (2014–2017)</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-item-content">
+          <h3>M.Sc. Computer Science</h3>
+          <p>PSGR Krishnammal College for Women (2017–2019)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section id="strengths">
+    <h2>Strengths</h2>
+    <div class="strengths-container">
+      <div class="strength-card">
+        <i class="fas fa-bolt"></i>
+        <h3>Quick Learner</h3>
+        <p>Adaptability to new technologies and environments with ease.</p>
+      </div>
+      <div class="strength-card">
+        <i class="fas fa-brain"></i>
+        <h3>Problem Solver</h3>
+        <p>Strong analytical and critical thinking skills to solve challenges.</p>
+      </div>
+      <div class="strength-card">
+        <i class="fas fa-users"></i>
+        <h3>Team Player</h3>
+        <p>Excellent collaboration and communication within a team.</p>
+      </div>
+      <div class="strength-card">
+        <i class="fas fa-check-circle"></i>
+        <h3>Detail-Oriented</h3>
+        <p>Committed to quality and accuracy in every project delivered.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>I'd love to hear from you! Send me a message below 👇</p>
+    <form class="contact-form" onsubmit="sendEmail(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    // Animate on scroll
+    const elements = document.querySelectorAll('.project-card, .timeline-item, .strength-card');
+    function showOnScroll() {
+      const triggerBottom = window.innerHeight * 0.9;
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          el.classList.add('show');
+        }
+      });
+    }
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+
+    // Contact form mock function (replace with backend later)
+    function sendEmail(event) {
+      event.preventDefault();
+      alert("Thank you! Your message has been sent.");
+      document.querySelector('.contact-form').reset();
+    }
+  </script>
+</body>
+</html>
