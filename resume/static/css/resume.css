@@ -8,6 +8,53 @@ body {
   line-height: 1.6;
   scroll-behavior: smooth;
 }
+/* ===== Header Animation ===== */
+
+/* Fade + Slide for header */
+header {
+  animation: fadeSlideDown 1.2s ease-out;
+}
+
+/* Name animation */
+header h1 {
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+/* Subtitle animation */
+header p {
+  animation: fadeIn 2s ease-in;
+}
+
+/* Keyframes */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Glow effect */
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 5px #38bdf8, 0 0 10px #38bdf8;
+  }
+  to {
+    text-shadow: 0 0 15px #38bdf8, 0 0 25px #38bdf8;
+  }
+}
 
 header {
   text-align: center;
@@ -40,10 +87,11 @@ section h2 {
   color: #38bdf8;
 }
 
-/* ===== Scroll Animation Core ===== */
+/* ===== Scroll Animation Core (UPDATED) ===== */
 .project-card,
 .timeline-item,
-.strength-card {
+.strength-card,
+.experience-card {   /* ✅ ADDED */
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -51,9 +99,47 @@ section h2 {
 
 .project-card.show,
 .timeline-item.show,
-.strength-card.show {
+.strength-card.show,
+.experience-card.show {  /* ✅ ADDED */
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== Work Experience (NEW) ===== */
+.experience-container {
+  display: flex;
+  justify-content: center;
+}
+
+.experience-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  width: 80%;
+  color: #e2e8f0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.experience-card h3 {
+  color: #38bdf8;
+}
+
+.experience-card p {
+  color: #94a3b8;
+}
+
+.experience-card ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.experience-card ul li {
+  margin-bottom: 10px;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
 }
 
 /* ===== Projects Section ===== */
@@ -139,17 +225,14 @@ section h2 {
 .timeline-item-content {
   padding: 20px;
   background: #1e293b;
-  position: relative;
   border-radius: 10px;
-  color: #e2e8f0;
 }
 
 .timeline-item h3 {
-  margin: 0 0 10px;
   color: #38bdf8;
 }
 
-/* ===== Strengths Section ===== */
+/* ===== Strengths ===== */
 .strengths-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -161,7 +244,6 @@ section h2 {
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-  color: #e2e8f0;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -183,7 +265,6 @@ section h2 {
 }
 
 .strength-card h3 {
-  margin: 10px 0;
   color: #38bdf8;
 }
 
@@ -192,7 +273,7 @@ section h2 {
   color: #94a3b8;
 }
 
-/* ===== Contact Section ===== */
+/* ===== Contact ===== */
 #contact {
   text-align: center;
   background: linear-gradient(135deg, #1e293b, #0f172a);
@@ -200,18 +281,9 @@ section h2 {
   border-top: 2px solid #38bdf8;
 }
 
-#contact h2 {
-  color: #38bdf8;
-  margin-bottom: 20px;
-}
-
-#contact p {
-  color: #94a3b8;
-}
-
 .contact-form {
   max-width: 600px;
-  margin: 20px auto 0;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -224,7 +296,6 @@ section h2 {
   border-radius: 10px;
   background: #0f172a;
   color: #e2e8f0;
-  font-size: 1rem;
 }
 
 .contact-form input:focus,
@@ -238,13 +309,10 @@ section h2 {
   color: #0f172a;
   border: none;
   border-radius: 10px;
-  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 .contact-form button:hover {
   background: #facc15;
-  color: #0f172a;
 }
